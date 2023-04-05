@@ -89,6 +89,8 @@ GEM
     debug (1.7.2)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
+    eiwa (0.1.0)
+      nokogiri
     erubi (1.12.0)
     globalid (1.1.0)
       activesupport (>= 5.0)
@@ -215,6 +217,7 @@ DEPENDENCIES
   capybara
   cssbundling-rails
   debug
+  eiwa
   jbuilder
   jsbundling-rails
   pg (~> 1.1)
