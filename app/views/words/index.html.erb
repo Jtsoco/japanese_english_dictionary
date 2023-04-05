@@ -1,5 +1,5 @@
 <%= render 'shared/navbar' %>
-<div class="container d-flex justify-content-center">
+<div class="container d-flex flex-column align-items-center">
   <div class="search-width w-100">
     <%= form_with url: words_path, method: :get, class: "d-flex" do %>
       <%= text_field_tag :q, params[:q], class: "form-control", placeholder: "Type words to look up"%>
@@ -7,14 +7,22 @@
     <% end %>
   </div>
   <% if @words.length > 0 %>
-    <% @words.each do |word_set| %>
-      <% word_set.each do |word| %>
-        <div class="word-box">
-          <%= word.japanese %>
-          <%= word.reading %>
-          <%= word.english %>
-        </div>
+    <div class="d-flex flex-column mt-3">
+      <% @words.each do |word_set| %>
+        <% word_set.each do |word| %>
+          <div class="word-box">
+            <div class="d-flex flex-column">
+              <p class="japanese-font">
+                <%= word.japanese %>
+              </p>
+              <%= word.reading %>
+            </div>
+            <p class="english-font">
+              <%= word.english %>
+            </p>
+          </div>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   <% end %>
 </div>
