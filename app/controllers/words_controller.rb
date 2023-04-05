@@ -20,9 +20,7 @@ class WordsController < ApplicationController
           full_words = Word.where("japanese LIKE ?", "% #{word} %").first(5) if full_words.empty?
           full_words = Word.where("reading LIKE ?", "% #{word} %").first(5) if full_words.empty?
           full_words = Word.where("english ILIKE ?", "% #{word} %").first(5) if full_words.empty?
-
           @words << full_words unless full_words.empty?
-
         end
       else
         @words << full_query
