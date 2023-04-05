@@ -7,7 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 Word.delete_all
 puts "wiping database"
-Eiwa.parse_file("app/lib/assets/JMdict_e.xml", type: :jmdict_e) do |entry|
+Eiwa.parse_file("lib/assets/JMdict_e.xml", type: :jmdict_e) do |entry|
   word = Word.new
   puts "generating word"
   word.japanese = entry.text
