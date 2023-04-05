@@ -10,7 +10,7 @@
     <div class="d-flex flex-column mt-3">
       <% @words.each do |word_set| %>
         <% word_set.each do |word| %>
-          <div class="word-box">
+          <div class="<%= (word.japanese.length >= 10 || word.english.length >= 10) ? 'word-box-big-word' : 'word-box' %>">
             <div class="d-flex flex-column">
               <p class="japanese-font">
                 <%= word.japanese %>

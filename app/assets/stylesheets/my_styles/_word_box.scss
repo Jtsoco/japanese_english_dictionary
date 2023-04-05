@@ -1,7 +1,9 @@
 .word-box {
   width: 400px;
   box-shadow: 1px 3px 6px black;
-
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 8px 16px;
   margin-bottom: 8px;
 }
@@ -14,4 +16,11 @@
 .japanese-font {
   font-size: 32px;
   margin: 0;
+}
+
+.word-box-big-word {
+  width: 400px;
+  box-shadow: 1px 3px 6px black;
+  padding: 8px 16px;
+  margin-bottom: 8px;
 }
