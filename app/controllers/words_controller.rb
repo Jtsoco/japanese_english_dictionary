@@ -1,6 +1,8 @@
 class WordsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
+
   def index
+    @all_words = policy_scope(Word)
     @words = []
     if params[:q].present?
       @query = params[:q]
