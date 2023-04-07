@@ -5,7 +5,7 @@ class ApiController < ApplicationController
   skip_before_action :verify_authenticity_token, only: :index
 
   def index
-    # params = api_params
+    params = api_params
     # puts params
     # puts params[:info]
     warden.authenticate!(:api_token)
@@ -38,9 +38,9 @@ class ApiController < ApplicationController
 
   private
 
-  # def api_params
-  #   params.require(:info).permit(:language, array: [])
-  # end
+  def api_params
+    params.require(:info).permit(:language, array: [])
+  end
 end
 
 # curl request example
