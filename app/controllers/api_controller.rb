@@ -8,6 +8,7 @@ class ApiController < ApplicationController
     params = api_params
     # puts params
     # puts params[:info]
+    warden.authenticate!(:api_token)
     @words = []
     if params[:language] == "japanese"
       params[:array].each do |word|
@@ -32,7 +33,7 @@ class ApiController < ApplicationController
         }
       end
     end
-    render json: @word_list
+    render json: @words
   end
 
   private
@@ -43,7 +44,7 @@ class ApiController < ApplicationController
 end
 
 # curl request example
-# curl -X POST http://localhost:3000/api -H "Content-Type: application/json" -H 'Accept: application/json' -d '{"info": {"language": "japanese", "array": ["食べる"]}}'
+# curl -X POST http://localhost:3000/api -H "Content-Type: application/json" -H 'Accept: application/json' -H 'Authorization: Bearer 24bda4cb-c197-4f6a-8e25-720244c2cb8c' -d '{"info": {"language": "japanese", "array": ["食べる"]}}'
 
 
 # post example
