@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   root to: 'words#index'
   resources :words, only: [:index]
+  resources :users, only: [:show]
   # resources :api, only: [:index]
   post 'api', action: :index, controller: 'api', via: [:post]
 
