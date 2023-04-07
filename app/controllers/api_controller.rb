@@ -5,6 +5,7 @@ class ApiController < ApplicationController
   skip_before_action :verify_authenticity_token, only: :index
 
   def index
+    @all_words = policy_scope(Word)
     params = api_params
     # puts params
     # puts params[:info]
