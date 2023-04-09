@@ -79,6 +79,9 @@ group :development do
   # gem "spring"
 end
 
+# dotenv for environment
+gem 'dotenv-rails', groups: [:development, :test]
+
 # to encrypt the api_key
 gem 'lockbox'
 gem 'blind_index'

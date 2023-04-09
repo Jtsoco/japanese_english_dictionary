@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  encrypts :private_api_key
+  has_encrypted :private_api_key
   blind_index :private_api_key
   before_create :set_private_api_key
 
