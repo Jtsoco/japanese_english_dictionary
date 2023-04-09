@@ -1,7 +1,8 @@
 class User::PrivateApiKeysController < ApplicationController
   before_action :authenticate_user!
   def update
-    if current_user.update(privateapi_key: SecureRandom.hex)
+    authorize current_user
+    if current_user.update(private_api_key: SecureRandom.hex)
       redirect_to user_path(current_user), notice: "API Updated"
     else
       # TODO test the path to make sure it works
