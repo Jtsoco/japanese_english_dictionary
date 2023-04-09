@@ -79,6 +79,10 @@ group :development do
   # gem "spring"
 end
 
+# to encrypt the api_key
+gem 'lockbox'
+gem 'blind_index'
+
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
