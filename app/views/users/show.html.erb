@@ -1,6 +1,7 @@
-<div>hi</div>
-<h3>API Key</h3>
-<%= form_with model: current_user, url: user_private_api_keys_path do |f| %>
-  <%= f.text_field :private_api_key, disabled: true %>
-  <%= f.submit "Generate New Key" %>
-<% end %>
+<div class="container dflex flex-column text-center">
+  <h3 class="mb-3">API Key</h3>
+  <%= form_with model: current_user, url: user_private_api_keys_path do |f| %>
+    <%= f.text_field :private_api_key, disabled: true, style:"max-width: 350px; width: 100%" %>
+    <%= f.submit "Generate New Key" %>
+  <% end %>
+</div>
