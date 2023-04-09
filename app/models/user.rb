@@ -11,6 +11,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   private
+
   def set_private_api_key
     self.private_api_key = SecureRandom.hex if self.private_api_key.nil?
   end
