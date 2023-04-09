@@ -4,7 +4,7 @@ Warden::Strategies.add(:api_token) do
     end
 
     def authenticate!
-      user = User.find_by(api_token: api_token)
+      user = User.find_by(private_api_key: api_token)
 
       if user
         success!(user)
