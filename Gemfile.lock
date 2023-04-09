@@ -68,8 +68,12 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.3)
       public_suffix (>= 2.0.2, < 6.0)
+    argon2-kdf (0.1.7)
     bcrypt (3.1.18)
     bindex (0.8.1)
+    blind_index (2.3.1)
+      activesupport (>= 5.2)
+      argon2-kdf (>= 0.1.1)
     bootsnap (1.16.0)
       msgpack (~> 1.2)
     builder (3.2.4)
@@ -96,6 +100,10 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    dotenv (2.8.1)
+    dotenv-rails (2.8.1)
+      dotenv (= 2.8.1)
+      railties (>= 3.2)
     eiwa (0.1.0)
       nokogiri
     erubi (1.12.0)
@@ -112,6 +120,7 @@ GEM
       activesupport (>= 5.0.0)
     jsbundling-rails (1.1.1)
       railties (>= 6.0.0)
+    lockbox (1.2.0)
     loofah (2.20.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -241,14 +250,17 @@ PLATFORMS
   arm64-darwin-22
 
 DEPENDENCIES
+  blind_index
   bootsnap
   capybara
   cssbundling-rails
   debug
   devise
+  dotenv-rails
   eiwa
   jbuilder
   jsbundling-rails
+  lockbox
   pg (~> 1.1)
   puma (~> 5.0)
   pundit
